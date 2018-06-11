@@ -16,6 +16,10 @@
 (function() {
     'use strict';
 
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/{bulkasamurai}/sw.js', {scope: '/{bulkasamurai}/'})
+    }
+
     var app = {
         isLoading: true,
         visibleCards: {},
