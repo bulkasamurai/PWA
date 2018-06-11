@@ -169,9 +169,9 @@
      * freshest data.
      */
     app.getForecast = function(key, label) {
-        var statement = 'select * from weather.forecast where woeid=' + key;
+        var statement = "select * from weather.forecast where woeid=" + key + " and u='c'";
         var url = 'https://query.yahooapis.com/v1/public/yql?format=json&q=' +
-            statement + 'and u="c"';
+            statement;
         // TODO add cache logic here
         if ('caches' in window) {
             /*
