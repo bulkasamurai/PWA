@@ -16,9 +16,9 @@
 (function() {
     'use strict';
 
-    if (navigator.serviceWorker) {
+    /*if (navigator.serviceWorker) {
         navigator.serviceWorker.register('/bulkasamurai/sw.js', {scope: '/bulkasamurai/'})
-    }
+    }*/
 
     var app = {
         isLoading: true,
@@ -368,7 +368,7 @@
     // TODO add service worker code here
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-            .register('./service-worker.js')
+            .register('./sw.js')
             .then(function() { console.log('Service Worker Registered'); });
     }
 })();
