@@ -15,23 +15,23 @@
 var dataCacheName = 'weatherData-v1';
 var cacheName = 'weatherPWA-final-1';
 var filesToCache = [
-    '/',
-    '/index.html',
-    '/scripts/main.js',
-    '/styles/styles.css',
-    '/images/clear.png',
-    '/images/cloudy-scattered-showers.png',
-    '/images/cloudy.png',
-    '/images/fog.png',
-    '/images/ic_add_white_24px.svg',
-    '/images/ic_refresh_white_24px.svg',
-    '/images/partly-cloudy.png',
-    '/images/rain.png',
-    '/images/scattered-showers.png',
-    '/images/sleet.png',
-    '/images/snow.png',
-    '/images/thunderstorm.png',
-    '/images/wind.png'
+    '/bulkasamurai/',
+    '/bulkasamurai/index.html',
+    '/bulkasamurai/scripts/main.js',
+    '/bulkasamurai/styles/styles.css',
+    '/bulkasamurai/images/clear.png',
+    '/bulkasamurai/images/cloudy-scattered-showers.png',
+    '/bulkasamurai/images/cloudy.png',
+    '/bulkasamurai/images/fog.png',
+    '/bulkasamurai/images/ic_add_white_24px.svg',
+    '/bulkasamurai/images/ic_refresh_white_24px.svg',
+    '/bulkasamurai/images/partly-cloudy.png',
+    '/bulkasamurai/images/rain.png',
+    '/bulkasamurai/images/scattered-showers.png',
+    '/bulkasamurai/images/sleet.png',
+    '/bulkasamurai/images/snow.png',
+    '/bulkasamurai/images/thunderstorm.png',
+    '/bulkasamurai/images/wind.png'
 ];
 
 self.addEventListener('install', function(e) {
