@@ -332,7 +332,7 @@
         }
     };
     // TODO uncomment line below to test app with fake data
-    // app.updateForecastCard(initialWeatherForecast);
+    app.updateForecastCard(initialWeatherForecast);
 
     /************************************************************************
      *
@@ -366,10 +366,8 @@
     }
 
     // TODO add service worker code here
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('./sw.js')
-            .then(function() { console.log('Service Worker Registered'); });
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/bulkasamurai/sw.js', {scope: '/bulkasamurai/'})
     }
 })();
 /**
