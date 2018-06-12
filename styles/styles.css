@@ -289,7 +289,7 @@ body {
 }
 .card.cloudy::after {
     background: url(/bulkasamurai/images/cloudy-bg.jpg);
-    opacity: 1;
+    opacity: 0;
 }
 .card.partly-cloudy-day::after {
     background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);
