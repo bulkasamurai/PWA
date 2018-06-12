@@ -249,59 +249,20 @@ body {
     border-radius: 2px;
     margin: 16px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background-size: cover;
 }
 .card-inner {
     padding: 16px;
     background-color: rgba(255,255,255, 0.3);
 }
-.card.clear-day::after {
-    background: url(/bulkasamurai/images/sunny-bg.jpg);
-    opacity: 0.4;
-    background-size: cover;
-}
-.card.rain::after {
-    background: url(/bulkasamurai/images/rain-bg.jpg);
-    opacity: 0.2;
-    background-size: cover;
-}
-.card.thunderstorms::after {
-    background: url(/bulkasamurai/images/thunderstorms-bg.jpg);
-    opacity: 0.2;
-    background-size: cover;
-}
-.card.snow::after {
-    background: url(/bulkasamurai/images/snow-bg.png);
-    opacity: 0.4;
-    background-size: cover;
-}
-.card.fog::after {
-    background: url(/bulkasamurai/images/fog-bg.png);
-    opacity: 0.6;
-    background-size: cover;
-}
-.card.windy::after {
-    background: url(/bulkasamurai/images/windy-bg.jpg);
-    opacity: 0.5;
-    background-size: cover;
-}
-.card.cloudy::after {
-    background: url(/bulkasamurai/images/cloudy-bg.jpg);
-    opacity: 0;
-    background-size: cover;
-}
-.card.partly-cloudy-day::after {
-    background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);
-    opacity: 0.3;
-    background-size: cover;
-}
-.card::after {
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-}
+.card.clear-day {background: url(/bulkasamurai/images/sunny-bg.png);}
+.card.rain {background: url(/bulkasamurai/images/rain-bg.png);}
+.card.thunderstorms {background: url(/bulkasamurai/images/thunderstorms-bg.png);}
+.card.snow {background: url(/bulkasamurai/images/snow-bg.png);}
+.card.fog {background: url(/bulkasamurai/images/fog-bg.png);}
+.card.windy {background: url(/bulkasamurai/images/windy-bg.png);}
+.card.cloudy {background: url(/bulkasamurai/images/cloudy-bg.png);}
+.card.partly-cloudy-day {background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);}
 
 .weather-forecast .location {
     font-size: 1.75em; }
