@@ -249,22 +249,32 @@ body {
     border-radius: 2px;
     margin: 16px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    background-size: cover;
 }
 .card-inner {
     padding: 16px;
     background-color: rgba(255,255,255, 0.3);
 }
-.card.clear-day {background: url(/bulkasamurai/images/sunny-bg.jpg);}
-.card.rain {background: url(/bulkasamurai/images/rain-bg.jpg);}
-.card.thunderstorms {
+.card::after {
+    background-size: cover;
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+.card.clear-day::after {background: url(/bulkasamurai/images/sunny-bg.jpg);}
+.card.rain::after {background: url(/bulkasamurai/images/rain-bg.jpg);}
+.card.thunderstorms::after {
     background: url(/bulkasamurai/images/thunderstorms-bg.jpg);
 }
-.card.snow {background: url(/bulkasamurai/images/snow-bg.png);}
-.card.fog {background: url(/bulkasamurai/images/fog-bg.jpg);}
-.card.windy {background: url(/bulkasamurai/images/windy-bg.jpg);}
-.card.cloudy {background: url(/bulkasamurai/images/cloudy-bg.jpg);}
-.card.partly-cloudy-day {background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);}
+.card.snow::after {background: url(/bulkasamurai/images/snow-bg.png);}
+.card.fog::after {background: url(/bulkasamurai/images/fog-bg.jpg);}
+.card.windy::after {background: url(/bulkasamurai/images/windy-bg.jpg);}
+.card.cloudy::after {background: url(/bulkasamurai/images/cloudy-bg.jpg);}
+.card.partly-cloudy-day::after {background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);}
 
 .weather-forecast .location {
     font-size: 1.75em; }
