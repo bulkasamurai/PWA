@@ -2,10 +2,14 @@
   "name": "Weather",
   "short_name": "Weather",
   "lang": "ru-RU",
+  "scope": ".",
   "start_url": "https://bulkasamurai.github.io/bulkasamurai/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#3E4EB8",
   "theme_color": "#2F3BA2",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "https://bulkasamurai.github.io/bulkasamurai/images/icons/icon-128x128.png",

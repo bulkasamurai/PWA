@@ -366,8 +366,54 @@
     }
 
     // TODO add service worker code here
-    if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/bulkasamurai/sw.js', {scope: '/bulkasamurai/'})
+    //This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
+
+    var swRegistration = {};
+    var applicationServerPublicKey = 'BI6vyuMz970H34j_dzrL5ndnLlkRhiVCfxie19VbImM40cF_b3cjsUJTQgcsyK1XA0_kq3hzh7ZYOpNpBTiJdlA';
+    var applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
+
+//Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+    if (navigator.serviceWorker.controller) {
+        console.log('Найден активный сервисворкер, регистрация не нужна');
+    } else if ('serviceWorker' in navigator && 'PushManager' in window) {
+//Register the ServiceWorker
+        navigator.serviceWorker.register('sw.js')
+            .then(function (reg) {
+                console.log('Сервис воркер зарегистрирован:' + reg);
+                swRegistration = reg;
+                console.log(swRegistration);
+                subscribeUser(swRegistration);
+            });
+    } else {
+        console.log('Пуш уведомления не поддерживаются');
+    }
+
+    function subscribeUser(swRegistration) {
+        swRegistration.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: applicationServerKey
+        })
+            .then(function (subscription) {
+                console.log('Пользователь подписан');
+                /*updateSubscriptionOnServer(subscription);*/
+                isSubscribed = true;
+            })
+            .catch(function (err) {
+                console.log('Не удалось подписать пользователя: ', err);
+            });
+    }
+
+    function urlB64ToUint8Array(base64String) {
+        const padding = '='.repeat((4 - base64String.length % 4) % 4);
+        const base64 = (base64String + padding)
+            .replace(/\-/g, '+')
+            .replace(/_/g, '/');
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
+        for (var i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
     }
 })();
 /**
