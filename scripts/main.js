@@ -200,7 +200,7 @@
                 }
             } else {
                 // Return the initial weather forecast since no data is available.
-                app.updateForecastCard(initialWeatherForecast);
+                //app.updateForecastCard(initialWeatherForecast);
             }
         };
         request.open('GET', url);
@@ -291,7 +291,7 @@
      * or when the user has not saved any cities. See startup code for more
      * discussion.
      */
-    var initialWeatherForecast = {
+    /*var initialWeatherForecast = {
         key: '834463',
         label: 'Minsk',
         created: '',
@@ -325,10 +325,10 @@
                 direction: null
             }
         }
-    };
+    };*/
     // TODO uncomment line below to test app with fake data
-    /*app.updateForecastCard(initialWeatherForecast);
-    app.updateForecasts();*/
+    /*app.updateForecastCard(initialWeatherForecast);*/
+    app.updateForecasts();
 
     /************************************************************************
      *
@@ -354,11 +354,12 @@
          * scenario could guess the user's location via IP lookup and then inject
          * that data into the page.
          */
-        app.updateForecastCard(initialWeatherForecast);
-        app.selectedCities = [
+        //app.updateForecastCard(initialWeatherForecast);
+        /*app.selectedCities = [
             {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
         ];
-        app.saveSelectedCities();
+        app.saveSelectedCities();*/
+        app.toggleAddDialog(true);
     }
 
     // TODO add service worker code here
