@@ -216,6 +216,7 @@ body {
 }
 .prev:hover,
 .next:hover {
+    cursor: pointer;
     background-color: #717171;
 }
 
