@@ -191,6 +191,34 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; }
 
+.main.clear-day {background: url("/bulkasamurai/images/sunny-bg.jpg");}
+.main.rain {background: url("/bulkasamurai/images/rain-bg.jpg");}
+.main.thunderstorms {background: url("/bulkasamurai/images/thunderstorms-bg.jpg");}
+.main.snow {background: url("/bulkasamurai/images/snow-bg.jpg");}
+.main.fog {background: url("/bulkasamurai/images/fog-bg.jpg");}
+.main.windy {background: url("/bulkasamurai/images/windy-bg.jpg");}
+.main.cloudy {background: url("/bulkasamurai/images/cloudy-bg.jpg");}
+.main.partly-cloudy-day {background: url("/bulkasamurai/images/partly-cloudy-day-bg.jpg");}
+
+.prev {
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    width: 50px;
+    z-index: 99999;
+}
+.next {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    width: 50px;
+    z-index: 99999;
+}
+.prev:hover,
+.next:hover {
+    background-color: #717171;
+}
+
 .dialog-container {
     background: rgba(0, 0, 0, 0.57);
     position: fixed;

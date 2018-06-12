@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather PWA</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <!--<link rel="stylesheet" type="text/css" href="styles/slides.css">-->
 
     <link rel="manifest" href="/manifest.json">
 
@@ -25,7 +26,7 @@
     <button id="butAdd" class="headerButton" aria-label="Add"></button>
 </header>
 
-<div class="main">
+<div class="main" id="main">
     <div class="card cardTemplate weather-forecast" hidden>
         <div class="city-key" hidden></div>
         <div class="card-last-updated" hidden></div>
@@ -123,6 +124,10 @@
             </div>
         </div>
     </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 </div>
 
 <div class="dialog-container">
@@ -132,7 +137,6 @@
             <select id="selectCityToAdd">
                 <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
                      https://developer.yahoo.com/weather/documentation.html#req -->
-                <option value="834463">Minsk</option>
                 <option value="924938">Kyiv</option>
                 <option value="523920">Warsaw</option>
                 <option value="845743">Tallinn</option>
@@ -156,6 +160,31 @@
 
 <!-- Uncomment the line below when ready to test with fake data -->
 <script src="scripts/main.js" async></script>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("card");
+
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
 
 </body>
 </html>
