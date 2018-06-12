@@ -191,14 +191,14 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; }
 
-.main.clear-day {background: url(/bulkasamurai/images/sunny-bg.jpg);}
-.main.rain {background: url(/bulkasamurai/images/rain-bg.jpg);}
-.main.thunderstorms {background: url(/bulkasamurai/images/thunderstorms-bg.jpg);}
-.main.snow {background: url(/bulkasamurai/images/snow-bg.png);}
-.main.fog {background: url(/bulkasamurai/images/fog-bg.jpg);}
-.main.windy {background: url(/bulkasamurai/images/windy-bg.jpg);}
-.main.cloudy {background: url(/bulkasamurai/images/cloudy-bg.jpg);}
-.main.partly-cloudy-day {background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);}
+.card.clear-day {background: url(/bulkasamurai/images/sunny-bg.jpg);}
+.card.rain {background: url(/bulkasamurai/images/rain-bg.jpg);}
+.card.thunderstorms {background: url(/bulkasamurai/images/thunderstorms-bg.jpg);}
+.card.snow {background: url(/bulkasamurai/images/snow-bg.png);}
+.card.fog {background: url(/bulkasamurai/images/fog-bg.jpg);}
+.card.windy {background: url(/bulkasamurai/images/windy-bg.jpg);}
+.card.cloudy {background: url(/bulkasamurai/images/cloudy-bg.jpg);}
+.card.partly-cloudy-day {background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);}
 
 .prev {
     position: absolute;
