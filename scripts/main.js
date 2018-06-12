@@ -89,7 +89,7 @@
         var humidity = data.channel.atmosphere.humidity;
         var wind = data.channel.wind;
 
-        var mainWindow = document.getElementById('main');
+        var mainWindow = document.getElementById('card');
         mainWindow.classList.add(app.getIconClass(current.code));
 
         var card = app.visibleCards[data.key];
