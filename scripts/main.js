@@ -201,6 +201,9 @@
                     app.updateForecastCard(results);
                 }
             } else {
+                app.spinner.setAttribute('hidden', true);
+                app.container.removeAttribute('hidden');
+                app.isLoading = false;
                 // Return the initial weather forecast since no data is available.
                 //app.updateForecastCard(initialWeatherForecast);
             }
