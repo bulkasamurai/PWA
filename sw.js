@@ -31,7 +31,16 @@ var filesToCache = [
     '/bulkasamurai/images/sleet.png',
     '/bulkasamurai/images/snow.png',
     '/bulkasamurai/images/thunderstorm.png',
-    '/bulkasamurai/images/wind.png'
+    '/bulkasamurai/images/wind.png',
+
+    '/bulkasamurai/images/sunny-bg.jpg',
+    '/bulkasamurai/images/rain-bg.jpg',
+    '/bulkasamurai/images/thunderstorms-bg.jpg',
+    '/bulkasamurai/images/snow-bg.png',
+    '/bulkasamurai/images/fog-bg.jpg',
+    '/bulkasamurai/images/windy-bg.jpg',
+    '/bulkasamurai/images/cloudy-bg.jpg',
+    '/bulkasamurai/images/partly-cloudy-day-bg.png',
 ];
 
 self.addEventListener('install', function(e) {

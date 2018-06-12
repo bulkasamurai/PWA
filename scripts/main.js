@@ -102,6 +102,8 @@
         // Verifies the data provide is newer than what's already visible
         // on the card, if it's not bail, if it is, continue and update the
         // time saved in the card
+        var cardWindow = document.getElementById('card');
+        cardWindow.classList.add(app.getIconClass(current.code));
         var cardLastUpdatedElem = card.querySelector('.card-last-updated');
         var cardLastUpdated = cardLastUpdatedElem.textContent;
         if (cardLastUpdated) {
