@@ -1,20 +1,7 @@
-// Copyright 2016 Google Inc.
-// 
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-// 
-//      http://www.apache.org/licenses/LICENSE-2.0
-// 
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-var dataCacheName = 'weatherData-v1';
-var cacheName = 'weatherPWA-final-1';
-var filesToCache = [
+var APP_PREFIX = 'ApplicationName_';     // Identifier for this app (this needs to be consistent across every cache update)
+var VERSION = 'version_01';     // Version of the off-line cache (change this value everytime you want to update cache)
+var CACHE_NAME = APP_PREFIX + VERSION;
+var URLS = [                            // Add URL you want to cache in this list.
     '/bulkasamurai/',
     '/bulkasamurai/index.html',
     '/bulkasamurai/scripts/main.js',
@@ -40,73 +27,56 @@ var filesToCache = [
     '/bulkasamurai/images/fog-bg.png',
     '/bulkasamurai/images/windy-bg.png',
     '/bulkasamurai/images/cloudy-bg.png',
-    '/bulkasamurai/images/partly-cloudy-day-bg.png'
+    '/bulkasamurai/images/partly-cloudy-day-bg.png'            // add path to those files here
 ];
 
-self.addEventListener('install', function(e) {
-    console.log('[ServiceWorker] Install');
-    e.waitUntil(
-        caches.open(cacheName).then(function(cache) {
-            console.log('[ServiceWorker] Caching app shell');
-            return cache.addAll(filesToCache);
+// Respond with cached resources
+self.addEventListener('fetch', function (e) {
+    console.log('fetch request : ' + e.request.url)
+    e.respondWith(
+        caches.match(e.request).then(function (request) {
+            if (request) { // if cache is available, respond with cache
+                console.log('responding with cache : ' + e.request.url)
+                return request
+            } else {       // if there are no cache, try fetching request
+                console.log('file is not cached, fetching : ' + e.request.url)
+                return fetch(e.request)
+            }
+
+            // You can omit if/else for console.log & put one line below like this too.
+            // return request || fetch(e.request)
         })
-    );
+    )
 });
 
-self.addEventListener('activate', function(e) {
-    console.log('[ServiceWorker] Activate');
+// Cache resources
+self.addEventListener('install', function (e) {
     e.waitUntil(
-        caches.keys().then(function(keyList) {
-            return Promise.all(keyList.map(function(key) {
-                if (key !== cacheName && key !== dataCacheName) {
-                    console.log('[ServiceWorker] Removing old cache', key);
-                    return caches.delete(key);
+        caches.open(CACHE_NAME).then(function (cache) {
+            console.log('installing cache : ' + CACHE_NAME)
+            return cache.addAll(URLS)
+        })
+    )
+});
+
+// Delete outdated caches
+self.addEventListener('activate', function (e) {
+    e.waitUntil(
+        caches.keys().then(function (keyList) {
+            // `keyList` contains all cache names under your username.github.io
+            // filter out ones that has this app prefix to create white list
+            var cacheWhitelist = keyList.filter(function (key) {
+                return key.indexOf(APP_PREFIX)
+            })
+            // add current cache name to white list
+            cacheWhitelist.push(CACHE_NAME)
+
+            return Promise.all(keyList.map(function (key, i) {
+                if (cacheWhitelist.indexOf(key) === -1) {
+                    console.log('deleting cache : ' + keyList[i] )
+                    return caches.delete(keyList[i])
                 }
-            }));
+            }))
         })
-    );
-    /*
-     * Fixes a corner case in which the app wasn't returning the latest data.
-     * You can reproduce the corner case by commenting out the line below and
-     * then doing the following steps: 1) load app for first time so that the
-     * initial New York City data is shown 2) press the refresh button on the
-     * app 3) go offline 4) reload the app. You expect to see the newer NYC
-     * data, but you actually see the initial data. This happens because the
-     * service worker is not yet activated. The code below essentially lets
-     * you activate the service worker faster.
-     */
-    return self.clients.claim();
-});
-
-self.addEventListener('fetch', function(e) {
-    console.log('[Service Worker] Fetch', e.request.url);
-    var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
-    if (e.request.url.indexOf(dataUrl) > -1) {
-        /*
-         * When the request URL contains dataUrl, the app is asking for fresh
-         * weather data. In this case, the service worker always goes to the
-         * network and then caches the response. This is called the "Cache then
-         * network" strategy:
-         * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
-         */
-        e.respondWith(
-            caches.open(dataCacheName).then(function(cache) {
-                return fetch(e.request).then(function(response){
-                    cache.put(e.request.url, response.clone());
-                    return response;
-                });
-            })
-        );
-    } else {
-        /*
-         * The app is asking for app shell files. In this scenario the app uses the
-         * "Cache, falling back to the network" offline strategy:
-         * https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
-         */
-        e.respondWith(
-            caches.match(e.request).then(function(response) {
-                return response || fetch(e.request);
-            })
-        );
-    }
+    )
 });
