@@ -327,8 +327,8 @@
         }
     };
     // TODO uncomment line below to test app with fake data
-    app.updateForecastCard(initialWeatherForecast);
-    app.updateForecasts();
+    /*app.updateForecastCard(initialWeatherForecast);
+    app.updateForecasts();*/
 
     /************************************************************************
      *
