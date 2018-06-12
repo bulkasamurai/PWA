@@ -15,7 +15,8 @@
  */
 
 * {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+}
 
 html, body {
     padding: 0;
@@ -27,10 +28,12 @@ html, body {
     font-display: optional;
     color: #444;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    -moz-osx-font-smoothing: grayscale;
+}
 
 html {
-    overflow: hidden; }
+    overflow: hidden;
+}
 
 body {
     display: -webkit-box;
@@ -56,7 +59,8 @@ body {
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
-    background: #ececec; }
+    background: #ececec;
+}
 
 .header {
     width: 100%;
@@ -95,7 +99,9 @@ body {
     transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
     transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
     transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
-    z-index: 1000; }
+    z-index: 1000;
+}
+
 .header .headerButton {
     width: 24px;
     height: 24px;
@@ -107,11 +113,16 @@ body {
     transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
     border: none;
     outline: none;
-    cursor: pointer; }
+    cursor: pointer;
+}
+
 .header #butRefresh {
-    background: url(/bulkasamurai/images/ic_refresh_white_24px.svg) center center no-repeat; }
+    background: url(/bulkasamurai/images/ic_refresh_white_24px.svg) center center no-repeat;
+}
+
 .header #butAdd {
-    background: url(/bulkasamurai/images/ic_add_white_24px.svg) center center no-repeat; }
+    background: url(/bulkasamurai/images/ic_add_white_24px.svg) center center no-repeat;
+}
 
 .header__title {
     font-weight: 400;
@@ -120,14 +131,17 @@ body {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1; }
+    flex: 1;
+}
 
 .loader {
     left: 50%;
     top: 50%;
     position: fixed;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+}
+
 .loader #spinner {
     box-sizing: border-box;
     stroke: #673AB7;
@@ -135,51 +149,66 @@ body {
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
     -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
-    animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite; }
+    animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+}
 
 @-webkit-keyframes rotate {
     from {
         -webkit-transform: rotate(0);
-        transform: rotate(0); }
+        transform: rotate(0);
+    }
     to {
         -webkit-transform: rotate(450deg);
-        transform: rotate(450deg); } }
+        transform: rotate(450deg);
+    }
+}
 
 @keyframes rotate {
     from {
         -webkit-transform: rotate(0);
-        transform: rotate(0); }
+        transform: rotate(0);
+    }
     to {
         -webkit-transform: rotate(450deg);
-        transform: rotate(450deg); } }
+        transform: rotate(450deg);
+    }
+}
 
 @-webkit-keyframes line {
     0% {
         stroke-dasharray: 2, 85.964;
         -webkit-transform: rotate(0);
-        transform: rotate(0); }
+        transform: rotate(0);
+    }
     50% {
         stroke-dasharray: 65.973, 21.9911;
-        stroke-dashoffset: 0; }
+        stroke-dashoffset: 0;
+    }
     100% {
         stroke-dasharray: 2, 85.964;
         stroke-dashoffset: -65.973;
         -webkit-transform: rotate(90deg);
-        transform: rotate(90deg); } }
+        transform: rotate(90deg);
+    }
+}
 
 @keyframes line {
     0% {
         stroke-dasharray: 2, 85.964;
         -webkit-transform: rotate(0);
-        transform: rotate(0); }
+        transform: rotate(0);
+    }
     50% {
         stroke-dasharray: 65.973, 21.9911;
-        stroke-dashoffset: 0; }
+        stroke-dashoffset: 0;
+    }
     100% {
         stroke-dasharray: 2, 85.964;
         stroke-dashoffset: -65.973;
         -webkit-transform: rotate(90deg);
-        transform: rotate(90deg); } }
+        transform: rotate(90deg);
+    }
+}
 
 .main {
     padding-top: 60px;
@@ -189,7 +218,8 @@ body {
     flex: 1;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; }
+    -webkit-overflow-scrolling: touch;
+}
 
 .dialog-container {
     background: rgba(0, 0, 0, 0.57);
@@ -202,11 +232,13 @@ body {
     pointer-events: none;
     will-change: opacity;
     -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); }
+    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+}
 
 .dialog-container--visible {
     opacity: 1;
-    pointer-events: auto; }
+    pointer-events: auto;
+}
 
 .dialog {
     background: #FFF;
@@ -221,26 +253,33 @@ body {
     -webkit-transition: -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
     transition: -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
     transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
-    transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s, -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s; }
+    transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s, -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+}
 
 .dialog > div {
     padding-left: 24px;
-    padding-right: 24px; }
+    padding-right: 24px;
+}
 
 .dialog-title {
     padding-top: 20px;
-    font-size: 1.25em; }
+    font-size: 1.25em;
+}
 
 .dialog-body {
     padding-top: 20px;
-    padding-bottom: 24px; }
+    padding-bottom: 24px;
+}
+
 .dialog-body select {
     width: 100%;
-    font-size: 2em; }
+    font-size: 2em;
+}
 
 .dialog-buttons {
     padding: 8px !important;
-    float: right; }
+    float: right;
+}
 
 .card {
     position: relative;
@@ -249,126 +288,221 @@ body {
     border-radius: 2px;
     margin: 16px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    background-size: cover;
 }
+
 .card-inner {
     padding: 16px;
-    background-color: rgba(255,255,255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
 }
-.card.clear-day {background: url(/bulkasamurai/images/sunny-bg.png);}
-.card.rain {background: url(/bulkasamurai/images/rain-bg.png);}
-.card.thunderstorms {background: url(/bulkasamurai/images/thunderstorms-bg.png);}
-.card.snow {background: url(/bulkasamurai/images/snow-bg.png);}
-.card.fog {background: url(/bulkasamurai/images/fog-bg.png);}
-.card.windy {background: url(/bulkasamurai/images/windy-bg.png);}
-.card.cloudy {background: url(/bulkasamurai/images/cloudy-bg.png);}
-.card.partly-cloudy-day {background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);}
+
+.card.clear-day {
+    background: url(/bulkasamurai/images/sunny-bg.png);
+    background-size: cover;
+}
+
+.card.rain {
+    background: url(/bulkasamurai/images/rain-bg.png);
+    background-size: cover;
+}
+
+.card.thunderstorms {
+    background: url(/bulkasamurai/images/thunderstorms-bg.png);
+    background-size: cover;
+}
+
+.card.snow {
+    background: url(/bulkasamurai/images/snow-bg.png);
+    background-size: cover;
+}
+
+.card.fog {
+    background: url(/bulkasamurai/images/fog-bg.png);
+    background-size: cover;
+}
+
+.card.windy {
+    background: url(/bulkasamurai/images/windy-bg.png);
+    background-size: cover;
+}
+
+.card.cloudy {
+    background: url(/bulkasamurai/images/cloudy-bg.png);
+    background-size: cover;
+}
+
+.card.partly-cloudy-day {
+    background: url(/bulkasamurai/images/partly-cloudy-day-bg.png);
+    background-size: cover;
+}
 
 .weather-forecast .location {
-    font-size: 1.75em; }
+    font-size: 1.75em;
+}
 
 .weather-forecast .date, .weather-forecast .description {
-    font-size: 1.25em; }
+    font-size: 1.25em;
+}
 
 .weather-forecast .current {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+}
+
 .weather-forecast .current .icon {
     width: 128px;
-    height: 128px; }
+    height: 128px;
+}
+
 .weather-forecast .current .visual {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    font-size: 4em; }
+    font-size: 4em;
+}
+
 .weather-forecast .current .visual .scale {
     font-size: 0.5em;
-    vertical-align: super; }
+    vertical-align: super;
+}
+
 .weather-forecast .current .visual, .weather-forecast .current .description {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1; }
+    flex-grow: 1;
+}
+
 .weather-forecast .current .sunset:before {
     content: "Sunset: ";
-    color: #888; }
+    color: #888;
+}
+
 .weather-forecast .current .wind:before {
     content: "Wind: ";
-    color: #888; }
+    color: #888;
+}
+
 .weather-forecast .current .sunrise:before {
     content: "Sunrise: ";
-    color: #888; }
+    color: #888;
+}
+
 .weather-forecast .current .humidity:before {
     content: "Humidity: ";
-    color: #888; }
+    color: #888;
+}
+
 .weather-forecast .current .pollen:before {
     content: "Pollen Count: ";
-    color: #888; }
+    color: #888;
+}
+
 .weather-forecast .current .pcount:before {
     content: "Pollen ";
-    color: #888; }
+    color: #888;
+}
 
 .weather-forecast .future {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+}
+
 .weather-forecast .future .oneday {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    text-align: center; }
+    text-align: center;
+}
+
 .weather-forecast .future .oneday .icon {
     width: 64px;
     height: 64px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+}
+
 .weather-forecast .future .oneday .temp-high, .weather-forecast .future .oneday .temp-low {
-    display: inline-block; }
+    display: inline-block;
+}
+
 .weather-forecast .future .oneday .temp-low {
-    color: #888; }
+    color: #888;
+}
 
 .weather-forecast .icon {
     background-repeat: no-repeat;
-    background-size: contain; }
+    background-size: contain;
+}
+
 .weather-forecast .icon.clear-day {
-    background-image: url(/bulkasamurai/images/clear.png); }
+    background-image: url(/bulkasamurai/images/clear.png);
+}
+
 .weather-forecast .icon.clear-night {
-    background-image: url(/bulkasamurai/images/clear.png); }
+    background-image: url(/bulkasamurai/images/clear.png);
+}
+
 .weather-forecast .icon.rain {
-    background-image: url(/bulkasamurai/images/rain.png); }
+    background-image: url(/bulkasamurai/images/rain.png);
+}
+
 .weather-forecast .icon.snow {
-    background-image: url(/bulkasamurai/images/snow.png); }
+    background-image: url(/bulkasamurai/images/snow.png);
+}
+
 .weather-forecast .icon.sleet {
-    background-image: url(/bulkasamurai/images/sleet.png); }
+    background-image: url(/bulkasamurai/images/sleet.png);
+}
+
 .weather-forecast .icon.windy {
-    background-image: url(/bulkasamurai/images/wind.png); }
+    background-image: url(/bulkasamurai/images/wind.png);
+}
+
 .weather-forecast .icon.fog {
-    background-image: url(/bulkasamurai/images/fog.png); }
+    background-image: url(/bulkasamurai/images/fog.png);
+}
+
 .weather-forecast .icon.cloudy {
-    background-image: url(/bulkasamurai/images/cloudy.png); }
+    background-image: url(/bulkasamurai/images/cloudy.png);
+}
+
 .weather-forecast .icon.partly-cloudy-day {
-    background-image: url(/bulkasamurai/images/partly-cloudy.png); }
+    background-image: url(/bulkasamurai/images/partly-cloudy.png);
+}
+
 .weather-forecast .icon.partly-cloudy-night {
-    background-image: url(/bulkasamurai/images/partly-cloudy.png); }
+    background-image: url(/bulkasamurai/images/partly-cloudy.png);
+}
+
 .weather-forecast .icon.thunderstorms {
-    background-image: url(/bulkasamurai/images/thunderstorm.png); }
+    background-image: url(/bulkasamurai/images/thunderstorm.png);
+}
 
 @media (max-width: 450px) {
     .weather-forecast .date, .weather-forecast .description {
-        font-size: 0.9em; }
+        font-size: 0.9em;
+    }
+
     .weather-forecast .current .icon {
         width: 96px;
-        height: 96px; }
+        height: 96px;
+    }
+
     .weather-forecast .current .visual {
-        font-size: 3em; }
+        font-size: 3em;
+    }
+
     .weather-forecast .future .oneday .icon {
         width: 32px;
-        height: 32px; } }
+        height: 32px;
+    }
+}
 
 .mdl-button {
     background: transparent;
@@ -396,24 +530,42 @@ body {
     text-decoration: none;
     text-align: center;
     line-height: 36px;
-    vertical-align: middle; }
+    vertical-align: middle;
+}
+
 .mdl-button::-moz-focus-inner {
-    border: 0; }
+    border: 0;
+}
+
 .mdl-button:hover {
-    background-color: rgba(158, 158, 158, 0.2); }
+    background-color: rgba(158, 158, 158, 0.2);
+}
+
 .mdl-button:focus:not(:active) {
-    background-color: rgba(0, 0, 0, 0.12); }
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
 .mdl-button:active {
-    background-color: rgba(158, 158, 158, 0.4); }
+    background-color: rgba(158, 158, 158, 0.4);
+}
+
 .mdl-button.mdl-button--colored {
-    color: #3f51b5; }
+    color: #3f51b5;
+}
+
 .mdl-button.mdl-button--colored:focus:not(:active) {
-    background-color: rgba(0, 0, 0, 0.12); }
+    background-color: rgba(0, 0, 0, 0.12);
+}
 
 .mdl-button--primary.mdl-button--primary {
-    color: #3f51b5; }
+    color: #3f51b5;
+}
+
 .mdl-button--primary.mdl-button--primary .mdl-ripple {
-    background: white; }
+    background: white;
+}
+
 .mdl-button--primary.mdl-button--primary.mdl-button--raised, .mdl-button--primary.mdl-button--primary.mdl-button--fab {
     color: white;
-    background-color: #3f51b5; }
+    background-color: #3f51b5;
+}
