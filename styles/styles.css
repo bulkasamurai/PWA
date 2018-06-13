@@ -128,8 +128,10 @@ body {
     text-align: center;
     float: right;
 }
-#butRemove img {
+#butRemove #remove {
     cursor: pointer;
+    height: 16px;
+    width: 16px;
 }
 
 .header__title {
