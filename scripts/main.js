@@ -25,7 +25,6 @@
             app.selectedCities = app.selectedCities.filter(function (value) {
                 return value.key !== city.key;
             });
-            console.log(app.selectedCities);
             card.parentNode.remove();
             app.saveSelectedCities();
         }
@@ -115,7 +114,7 @@
         cardLastUpdatedElem.textContent = data.created;
 
         card.querySelector('.description').textContent = current.text;
-        card.querySelector('.date').textContent = current.date;
+        card.querySelector('.date').textContent = new Date(dataLastUpdated.toUTCString()).toString().split('G')[0];
         card.querySelector('.current .icon').classList.add(app.getIconClass(current.code));
         card.querySelector('.current .temperature .value').textContent =
             Math.round(current.temp);
