@@ -40,7 +40,8 @@ var filesToCache = [
     '/bulkasamurai/images/fog-bg.png',
     '/bulkasamurai/images/windy-bg.png',
     '/bulkasamurai/images/cloudy-bg.png',
-    '/bulkasamurai/images/partly-cloudy-day-bg.png'
+    '/bulkasamurai/images/partly-cloudy-day-bg.png',
+    '/bulkasamurai/images/favicon.ico'
 ];
 
 self.addEventListener('install', function(e) {
