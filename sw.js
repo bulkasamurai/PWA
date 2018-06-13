@@ -98,3 +98,23 @@ self.addEventListener('fetch', function(e) {
         );
     }
 });
+
+self.addEventListener('push', function (event) {
+    console.log('Push');
+    console.log('Push data: "${event.data.text()}"');
+    const title = 'Weather';
+    const options = {
+        body: 'Everything ok'/*,
+        icon: 'images/icon.png',
+        badge: 'images/badge.png'*/
+    };
+    event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', function (event) {
+    console.log('Notification click');
+    event.notification.close();
+    event.waitUntil(
+        clients.openWindow('https://developers.google.com/web/')
+    );
+});
