@@ -364,40 +364,9 @@
     }
 
     // TODO add service worker code here
-    //This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
-
-    var swRegistration = {};
-
-//Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-    if (navigator.serviceWorker.controller) {
-        console.log('Найден активный сервисворкер, регистрация не нужна');
-    } else if ('serviceWorker' in navigator && 'PushManager' in window) {
-//Register the ServiceWorker
-        navigator.serviceWorker.register('sw.js')
-            .then(function (reg) {
-                console.log('Сервис воркер зарегистрирован:' + reg);
-                swRegistration = reg;
-                console.log(swRegistration);
-                subscribeUser(swRegistration);
-            });
-    } else {
-        console.log('Пуш уведомления не поддерживаются');
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/bulkasamurai/sw.js', {scope: '/bulkasamurai/'})
     }
-
-    function subscribeUser(swRegistration) {
-        swRegistration.pushManager.subscribe({
-            userVisibleOnly: true
-        })
-            .then(function (subscription) {
-                console.log('Пользователь подписан');
-                // updateSubscriptionOnServer(subscription);
-                // isSubscribed = true;
-            })
-            .catch(function (err) {
-                console.log('Не удалось подписать пользователя: ', err);
-            });
-    }
-
 })();
 /**
  * Created by User on 11.06.2018.
