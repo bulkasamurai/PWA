@@ -105,6 +105,35 @@ body {
     width: 16px;
 }
 
+#butAddCity,
+#butAddCancel {
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
+}
+
+#butAddCity {
+    color: #3F51B5;
+    border: 2px solid #3F51B5;
+}
+
+#butAddCancel {
+    color: #a01107;
+    border: 2px solid #a01107;
+}
+
+#butAddCity:hover {
+    color: #fff;
+    background: #3F51B5;
+}
+
+#butAddCancel:hover {
+    color: #fff;
+    background: #a01107;
+}
+
 .header__title {
     font-weight: 400;
     font-size: 20px;
@@ -225,22 +254,22 @@ body {
 }
 
 .dialog-title {
-    padding-top: 20px;
+    margin-top: 50%;
     font-size: 1.25em;
 }
 
 .dialog-body {
-    padding-top: 20px;
     padding-bottom: 24px;
 }
 
 .dialog-body select {
     width: 100%;
-    font-size: 2em;
+    font-size: 1.2em;
+    border-radius: 4px;
+    padding: 10px;
 }
 
 .dialog-buttons {
-    padding: 8px !important;
     float: right;
 }
 
