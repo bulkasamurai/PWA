@@ -63,6 +63,7 @@ body {
 }
 
 .header {
+    background: #3F51B5;
     width: 100%;
     height: 56px;
     color: #FFF;
@@ -89,12 +90,10 @@ body {
 
 .header #butRefresh {
     float: right;
-    background: url(/bulkasamurai/images/refresh.svg) center center no-repeat;
 }
 
 .header #butAdd {
     float: right;
-    background: url(/bulkasamurai/images/ic_add_white_24px.svg) center center no-repeat;
 }
 
 #butRemove {
@@ -102,7 +101,6 @@ body {
     float: right;
 }
 #butRemove #remove {
-    background: url(/bulkasamurai/images/close.svg) center center no-repeat;
     height: 16px;
     width: 16px;
 }
@@ -203,27 +201,6 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
-
-/*
-.dialog-container {
-    background: rgba(0, 0, 0, 0.57);
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    pointer-events: none;
-    will-change: opacity;
-    -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-}
-
-.dialog-container--visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-*/
 
 .dialog {
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48);

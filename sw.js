@@ -1,17 +1,3 @@
-// Copyright 2016 Google Inc.
-// 
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-// 
-//      http://www.apache.org/licenses/LICENSE-2.0
-// 
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 var dataCacheName = 'weatherData-v1';
 var cacheName = 'weatherPWA-final-1';
 var filesToCache = [
@@ -23,7 +9,7 @@ var filesToCache = [
     '/bulkasamurai/images/cloudy-scattered-showers.png',
     '/bulkasamurai/images/cloudy.png',
     '/bulkasamurai/images/fog.png',
-    '/bulkasamurai/images/ic_add_white_24px.svg',
+    '/bulkasamurai/images/add.svg',
     '/bulkasamurai/images/partly-cloudy.png',
     '/bulkasamurai/images/rain.png',
     '/bulkasamurai/images/scattered-showers.png',
@@ -31,7 +17,7 @@ var filesToCache = [
     '/bulkasamurai/images/snow.png',
     '/bulkasamurai/images/thunderstorm.png',
     '/bulkasamurai/images/wind.png',
-
+    '/bulkasamurai/images/reload.svg',
     '/bulkasamurai/images/sunny-bg.png',
     '/bulkasamurai/images/rain-bg.png',
     '/bulkasamurai/images/thunderstorms-bg.png',
@@ -40,7 +26,7 @@ var filesToCache = [
     '/bulkasamurai/images/windy-bg.png',
     '/bulkasamurai/images/cloudy-bg.png',
     '/bulkasamurai/images/partly-cloudy-day-bg.png',
-    '/bulkasamurai/images/close.svg'
+    '/bulkasamurai/images/cancel.svg'
 ];
 
 self.addEventListener('install', function(e) {
