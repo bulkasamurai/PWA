@@ -129,7 +129,7 @@ body {
     float: right;
 }
 #butRemove #remove {
-    cursor: pointer;
+    background: url(/bulkasamurai/images/close.svg) center center no-repeat;
     height: 16px;
     width: 16px;
 }
