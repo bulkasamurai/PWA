@@ -24,7 +24,6 @@ var filesToCache = [
     '/bulkasamurai/images/cloudy.png',
     '/bulkasamurai/images/fog.png',
     '/bulkasamurai/images/ic_add_white_24px.svg',
-    '/bulkasamurai/images/ic_refresh_white_24px.svg',
     '/bulkasamurai/images/partly-cloudy.png',
     '/bulkasamurai/images/rain.png',
     '/bulkasamurai/images/scattered-showers.png',

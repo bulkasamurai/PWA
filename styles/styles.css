@@ -59,7 +59,7 @@ body {
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
-    background: #D9EFFA;
+    background: #fff;
 }
 
 .header {
@@ -89,7 +89,7 @@ body {
 
 .header #butRefresh {
     float: right;
-    background: url(/bulkasamurai/images/ic_refresh_white_24px.svg) center center no-repeat;
+    background: url(/bulkasamurai/images/refresh.svg) center center no-repeat;
 }
 
 .header #butAdd {
