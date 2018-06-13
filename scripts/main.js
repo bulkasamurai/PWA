@@ -23,7 +23,7 @@
         spinner: document.querySelector('.loader'),
         cardTemplate: document.querySelector('.cardTemplate'),
         container: document.querySelector('.main'),
-        addDialog: document.querySelector('.dialog-container'),
+        addDialog: document.querySelector('.dialog'),
         daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     };
 
@@ -86,9 +86,9 @@
     // Toggles the visibility of the add new city dialog.
     app.toggleAddDialog = function(visible) {
         if (visible) {
-            app.addDialog.classList.add('dialog-container--visible');
+            app.addDialog.classList.add('dialog--visible');
         } else {
-            app.addDialog.classList.remove('dialog-container--visible');
+            app.addDialog.classList.remove('dialog--visible');
         }
     };
 
