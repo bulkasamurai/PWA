@@ -33,6 +33,19 @@
      * Event listeners for UI elements
      *
      ****************************************************************************/
+    document.querySelector('body').addEventListener('click', function(event) {
+        if (event.target.id.toLowerCase() === 'remove') {
+            var card = event.target.parentNode.parentNode;
+            var city = {key: card.querySelectorAll(".city-key")[0].innerText, label: card.querySelectorAll(".location")[0].innerText};
+            app.selectedCities = app.selectedCities.filter(function (value) {
+                return value.key !== city.key;
+            });
+            console.log(app.selectedCities);
+            card.parentNode.remove();
+            app.saveSelectedCities();
+        }
+    });
+
     document.getElementById('butRefresh').addEventListener('click', function() {
         // Refresh all of the forecasts
         app.updateForecasts();
@@ -94,6 +107,7 @@
             card = app.cardTemplate.cloneNode(true);
             card.classList.remove('cardTemplate');
             card.querySelector('.location').textContent = data.label;
+            card.querySelector('.city-key').textContent = data.key;
             card.removeAttribute('hidden');
             app.container.appendChild(card);
             app.visibleCards[data.key] = card;

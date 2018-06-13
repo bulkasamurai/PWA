@@ -124,6 +124,14 @@ body {
     background: url(/bulkasamurai/images/ic_add_white_24px.svg) center center no-repeat;
 }
 
+#butRemove {
+    text-align: center;
+    float: right;
+}
+#butRemove img {
+    cursor: pointer;
+}
+
 .header__title {
     font-weight: 400;
     font-size: 20px;
