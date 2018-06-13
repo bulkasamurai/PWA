@@ -373,7 +373,7 @@
         console.log('Найден активный сервисворкер, регистрация не нужна');
     } else if ('serviceWorker' in navigator && 'PushManager' in window) {
 //Register the ServiceWorker
-        navigator.serviceWorker.register('pwabuilder-sw.js')
+        navigator.serviceWorker.register('sw.js')
             .then(function (reg) {
                 console.log('Сервис воркер зарегистрирован:' + reg);
                 swRegistration = reg;
