@@ -3,6 +3,7 @@ var cacheName = 'weatherPWA-final-1';
 var filesToCache = [
     '/bulkasamurai/',
     '/bulkasamurai/manifest.json',
+    '/bulkasamurai/sw.js',
     '/bulkasamurai/index.html',
     '/bulkasamurai/scripts/main.js',
     '/bulkasamurai/styles/styles.css',
