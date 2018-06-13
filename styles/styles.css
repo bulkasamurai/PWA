@@ -84,7 +84,8 @@ body {
     text-align: center;
     float: right;
 }
-#butRemove #remove {
+#butRemove img {
+    cursor: pointer;
     height: 16px;
     width: 16px;
 }
