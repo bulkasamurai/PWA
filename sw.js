@@ -3,7 +3,6 @@ var cacheName = 'weather-pages-1';
 var filesToCache = [
     '/bulkasamurai/',
     '/bulkasamurai/index.html',
-    '/bulkasamurai/manifest.json',
     '/bulkasamurai/scripts/main.js',
     '/bulkasamurai/styles/styles.css',
     '/bulkasamurai/images/clear.png',
@@ -27,7 +26,6 @@ var filesToCache = [
     '/bulkasamurai/images/windy-bg.png',
     '/bulkasamurai/images/cloudy-bg.png',
     '/bulkasamurai/images/partly-cloudy-day-bg.png',
-    '/bulkasamurai/images/favicon.ico',
     '/bulkasamurai/images/cancel.svg'
 ];
 
