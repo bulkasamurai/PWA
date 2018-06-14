@@ -89,7 +89,7 @@
         cardLastUpdatedElem.textContent = data.created;
 
         card.querySelector('.description').textContent = current.text;
-        card.querySelector('.date').textContent = data.created;
+        card.querySelector('.date').textContent = new Date(dataLastUpdated.toUTCString()).toString().split('G')[0];
         card.querySelector('.current .icon').classList.add(app.getIconClass(current.code));
         card.querySelector('.current .temperature .value').textContent =
             Math.round(current.temp);
